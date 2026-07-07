@@ -1,7 +1,10 @@
 # LỘ TRÌNH VÀ TÀI LIỆU HƯỚNG DẪN HỌC LẬP TRÌNH JAVA TOÀN DIỆN
 > **Dành cho:** Người mới bắt đầu (Beginner)
+>
 > **Tác giả:** Tam Nguyen
+>
 > **Ngôn ngữ:** Tiếng Việt
+>
 > **Phiên bản Java đích:** Java 17 LTS / Java 21 LTS
 
 ---
