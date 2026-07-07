@@ -1,7 +1,7 @@
 # LỘ TRÌNH VÀ TÀI LIỆU HƯỚNG DẪN HỌC LẬP TRÌNH JAVA TOÀN DIỆN
-> **Dành cho:** Người mới bắt đầu (Beginner)  
-> **Tác giả:** Chuyên gia Đào tạo Lập trình & Kỹ sư Phần mềm Cao cấp  
-> **Ngôn ngữ:** Tiếng Việt  
+> **Dành cho:** Người mới bắt đầu (Beginner)
+> **Tác giả:** Chuyên gia Đào tạo Lập trình & Kỹ sư Phần mềm Cao cấp
+> **Ngôn ngữ:** Tiếng Việt
 > **Phiên bản Java đích:** Java 17 LTS / Java 21 LTS
 
 ---
@@ -21,11 +21,11 @@
 ### 1. Hướng dẫn cài đặt JDK
 
 #### Trên hệ điều hành Windows
-1. **Tải JDK:** 
+1. **Tải JDK:**
    - Truy cập trang chủ Eclipse Adoptium: [adoptium.net](https://adoptium.net) (khuyên dùng vì hoàn toàn miễn phí và mã nguồn mở - Temurin OpenJDK).
    - Chọn phiên bản **Java 17 (LTS)** hoặc **Java 21 (LTS)** cho Windows x64 và tải file cài đặt `.msi` hoặc `.exe`.
 2. **Cài đặt:**
-   - Chạy file tải về, bấm **Next**. 
+   - Chạy file tải về, bấm **Next**.
    - *Lưu ý quan trọng:* Trong quá trình cài đặt, tích chọn **"Set JAVA_HOME variable"** và **"Associate .jar files"** để bộ cài đặt tự động cấu hình.
 3. **Cấu hình thủ công biến môi trường (Environment Variables) - Nếu cần:**
    - Mở **Start**, tìm kiếm `Environment Variables` và chọn **Edit the system environment variables**.
@@ -61,7 +61,7 @@ Mở Command Prompt/PowerShell (Windows) hoặc Terminal (Ubuntu) và chạy hai
 java -version
 javac -version
 ```
-> **Kết quả mong đợi:** Màn hình hiển thị thông tin phiên bản Java tương tự như:  
+> **Kết quả mong đợi:** Màn hình hiển thị thông tin phiên bản Java tương tự như:
 > `openjdk version "17.0.x" ...` hoặc `java version "21.x.x" ...`
 
 ---
@@ -133,6 +133,23 @@ Khi đã nắm vững dòng lệnh, bạn nên chuyển sang dùng IDE để tă
    - Đặt tên Class là `App`, tích chọn ô `public static void main(String[] args)`, nhấn **Finish**.
    - Viết lệnh in ra màn hình và click chuột phải chọn **Run As** -> **Java Application** để thực thi.
 
+#### IntelliJ IDEA (Khuyên dùng - IDE mạnh mẽ nhất cho Java)
+1. **Tải phiên bản miễn phí:** Truy cập trang tải về của JetBrains: [jetbrains.com/idea/download](https://www.jetbrains.com/idea/download). Cuộn xuống phần **IntelliJ IDEA Community Edition** (phiên bản miễn phí dành cho học tập và phát triển cá nhân) và tải về.
+2. **Cài đặt:**
+   - **Windows:** Chạy file cài đặt `.exe`. Trong phần *Installation Options*, bạn nên tích chọn **Add "bin" folder to the PATH**, **Create Desktop Shortcut**, và **Associate .java files**.
+   - **Ubuntu/Linux:** Bạn có thể cài đặt dễ dàng thông qua gói snap bằng lệnh:
+     ```bash
+     sudo snap install intellij-idea-community --classic
+     ```
+3. **Tạo dự án Java đầu tiên:**
+   - Khởi động IntelliJ IDEA, nhấp chọn **New Project**.
+   - Đặt tên Project (Ví dụ: `HocJavaIntelliJ`).
+   - Tại mục **JDK**: IntelliJ sẽ tự động nhận diện JDK đã cài đặt trong máy. Nếu chưa có, bạn có thể bấm vào menu thả xuống và chọn **Download JDK** để IntelliJ tự động tải về phiên bản tương thích cực kỳ tiện lợi.
+   - Bấm **Create** để khởi tạo dự án.
+   - Trong giao diện làm việc, chuột phải vào thư mục `src` -> **New** -> **Java Class**, đặt tên là `Main`.
+   - Gõ phím tắt `psvm` hoặc `main` rồi ấn `Tab` để IDE tự động sinh nhanh hàm `public static void main`.
+   - Viết mã nguồn in màn hình: `System.out.println("Xin chào từ IntelliJ IDEA!");`.
+   - Bấm vào nút tam giác màu xanh lá cây (**Run**) nằm cạnh hàm main hoặc ở góc trên bên phải để chạy ứng dụng.
 ---
 
 ## PHẦN 2: LỘ TRÌNH HỌC JAVA CORE (CƠ BẢN ĐẾN KHÁ)
@@ -147,22 +164,22 @@ Mỗi chương trình Java luôn bắt đầu bằng các class. Code thực thi
 package com.giaoduc.core; // Package dùng để phân nhóm các Class tránh xung đột tên
 
 public class NhapMon { // Tên class trùng với tên file NhapMon.java
-    
+
     public static void main(String[] args) { // Hàm main: Nơi JVM bắt đầu chạy chương trình
-        
+
         // --- 1. Khai báo biến và các kiểu dữ liệu nguyên thủy (Primitive Types) ---
         int tuoi = 20;               // Kiểu số nguyên (4 bytes)
         double diem = 8.5;           // Kiểu số thực dấu phẩy động (8 bytes)
         char kyTu = 'A';             // Kiểu ký tự đơn (2 bytes, dùng nháy đơn)
         boolean laSinhVien = true;   // Kiểu logic (true/false)
-        
+
         // --- 2. Kiểu dữ liệu đối tượng / tham chiếu (Reference Type) ---
         String ten = "Nguyễn Văn A"; // Chuỗi ký tự (dùng nháy kép)
-        
+
         // --- 3. Sử dụng toán tử ---
         int namHienTai = 2026;
         int namSinh = namHienTai - tuoi; // Toán tử số học
-        
+
         // In kết quả ra màn hình Console
         System.out.println("Tên: " + ten);
         System.out.println("Năm sinh: " + namSinh);
@@ -190,7 +207,7 @@ package com.giaoduc.core;
 public class DieuKhienVongLap {
     public static void main(String[] args) {
         int diem = 78;
-        
+
         // --- 1. Khối lệnh if-else ---
         if (diem >= 90) {
             System.out.println("Xếp loại: Xuất sắc");
@@ -199,7 +216,7 @@ public class DieuKhienVongLap {
         } else {
             System.out.println("Xếp loại: Trung bình/Yếu");
         }
-        
+
         // --- 2. Cấu trúc switch-case (Kiểu switch expression mới của Java hiện đại) ---
         String thu = "Thứ Hai";
         String loaiNgay = switch (thu) {
@@ -207,14 +224,14 @@ public class DieuKhienVongLap {
             default -> "Ngày trong tuần";
         };
         System.out.println(thu + " là: " + loaiNgay);
-        
+
         // --- 3. Vòng lặp for ---
         System.out.print("Vòng lặp for: ");
         for (int i = 1; i <= 3; i++) {
             System.out.print(i + " ");
         }
         System.out.println();
-        
+
         // --- 4. Vòng lặp while & break/continue ---
         int dem = 0;
         System.out.print("Vòng lặp while: ");
@@ -247,13 +264,13 @@ public class MangVaChuoi {
         // --- 1. Mảng 1 chiều ---
         int[] danhSachSo = {2, 4, 6, 8};
         System.out.println("Phần tử thứ hai của mảng: " + danhSachSo[1]); // Index bắt đầu từ 0
-        
+
         // --- 2. String (Tính chất bất biến - Immutability) ---
         String s1 = "Hello";
         String s2 = s1.concat(" World"); // Tạo ra đối tượng String mới trên vùng nhớ Heap
         System.out.println("s1 gốc vẫn là: " + s1); // Vẫn giữ nguyên "Hello"
         System.out.println("s2 mới: " + s2);
-        
+
         // --- 3. StringBuilder (Mutable - Khuyên dùng khi sửa đổi chuỗi liên tục) ---
         StringBuilder sb = new StringBuilder("Java");
         sb.append(" Core");
@@ -317,7 +334,7 @@ public class OOPDemo {
         // Đa hình thực tế: Một biến lớp cha tham chiếu đến đối tượng lớp con
         DongVat cho = new ConCho("Kiki");
         DongVat meo = new ConMeo("Mimi");
-        
+
         cho.phatAmThanh(); // Kiki sủa: Gâu Gâu!
         meo.phatAmThanh(); // Mimi kêu: Meo Meo!
     }
@@ -342,7 +359,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class XuLyNgoaiLe {
-    
+
     // Checked Exception: Phải khai báo 'throws' hoặc xử lý try-catch ngay lúc viết code
     public static void docFile() throws IOException {
         FileReader file = new FileReader("khong_ton_tai.txt");
@@ -389,7 +406,7 @@ import java.util.*;
 
 public class CollectionDemo {
     public static void main(String[] args) {
-        
+
         // --- 1. LIST: Có thứ tự, cho phép chứa phần tử trùng lặp ---
         List<String> list = new ArrayList<>();
         list.add("Java");
@@ -549,7 +566,7 @@ public class FileIOSerializationDemo {
         // --- 1. Ghi/Đọc File dạng text thông dụng (Sử dụng Java NIO Files mới) ---
         Path path = Paths.get(txtFile);
         Files.writeString(path, "Học Java rất thú vị!\nĐây là dòng thứ 2."); // Ghi file cực nhanh từ Java 11
-        
+
         List<String> lines = Files.readAllLines(path); // Đọc toàn bộ dòng trong file
         System.out.println("Đọc file văn bản:");
         lines.forEach(System.out.println);
