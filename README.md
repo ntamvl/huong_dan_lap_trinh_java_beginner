@@ -1,7 +1,7 @@
 # LỘ TRÌNH VÀ TÀI LIỆU HƯỚNG DẪN HỌC LẬP TRÌNH JAVA TOÀN DIỆN
-> **Dành cho:** Người mới bắt đầu (Beginner)
-> **Tác giả:** Chuyên gia Đào tạo Lập trình & Kỹ sư Phần mềm Cao cấp
-> **Ngôn ngữ:** Tiếng Việt
+> **Dành cho:** Người mới bắt đầu (Beginner)  
+> **Tác giả:** Chuyên gia Đào tạo Lập trình & Kỹ sư Phần mềm Cao cấp  
+> **Ngôn ngữ:** Tiếng Việt  
 > **Phiên bản Java đích:** Java 17 LTS / Java 21 LTS
 
 ---
@@ -21,11 +21,11 @@
 ### 1. Hướng dẫn cài đặt JDK
 
 #### Trên hệ điều hành Windows
-1. **Tải JDK:**
+1. **Tải JDK:** 
    - Truy cập trang chủ Eclipse Adoptium: [adoptium.net](https://adoptium.net) (khuyên dùng vì hoàn toàn miễn phí và mã nguồn mở - Temurin OpenJDK).
    - Chọn phiên bản **Java 17 (LTS)** hoặc **Java 21 (LTS)** cho Windows x64 và tải file cài đặt `.msi` hoặc `.exe`.
 2. **Cài đặt:**
-   - Chạy file tải về, bấm **Next**.
+   - Chạy file tải về, bấm **Next**. 
    - *Lưu ý quan trọng:* Trong quá trình cài đặt, tích chọn **"Set JAVA_HOME variable"** và **"Associate .jar files"** để bộ cài đặt tự động cấu hình.
 3. **Cấu hình thủ công biến môi trường (Environment Variables) - Nếu cần:**
    - Mở **Start**, tìm kiếm `Environment Variables` và chọn **Edit the system environment variables**.
@@ -61,7 +61,7 @@ Mở Command Prompt/PowerShell (Windows) hoặc Terminal (Ubuntu) và chạy hai
 java -version
 javac -version
 ```
-> **Kết quả mong đợi:** Màn hình hiển thị thông tin phiên bản Java tương tự như:
+> **Kết quả mong đợi:** Màn hình hiển thị thông tin phiên bản Java tương tự như:  
 > `openjdk version "17.0.x" ...` hoặc `java version "21.x.x" ...`
 
 ---
@@ -150,6 +150,7 @@ Khi đã nắm vững dòng lệnh, bạn nên chuyển sang dùng IDE để tă
    - Gõ phím tắt `psvm` hoặc `main` rồi ấn `Tab` để IDE tự động sinh nhanh hàm `public static void main`.
    - Viết mã nguồn in màn hình: `System.out.println("Xin chào từ IntelliJ IDEA!");`.
    - Bấm vào nút tam giác màu xanh lá cây (**Run**) nằm cạnh hàm main hoặc ở góc trên bên phải để chạy ứng dụng.
+
 ---
 
 ## PHẦN 2: LỘ TRÌNH HỌC JAVA CORE (CƠ BẢN ĐẾN KHÁ)
@@ -160,26 +161,34 @@ Khi đã nắm vững dòng lệnh, bạn nên chuyển sang dùng IDE để tă
 
 Mỗi chương trình Java luôn bắt đầu bằng các class. Code thực thi nằm trong hàm entry-point `main`.
 
+> **Hướng dẫn thực hành:**  
+> - **Thư mục cần tạo:** `com/giaoduc/core` (tạo thư mục lồng nhau tương ứng cấu trúc package)  
+> - **Tên file:** `NhapMon.java` (lưu tại `com/giaoduc/core/NhapMon.java`)  
+> - **Lệnh chạy từ thư mục gốc dự án:**  
+>   ```bash
+>   java com/giaoduc/core/NhapMon.java
+>   ```
+
 ```java
 package com.giaoduc.core; // Package dùng để phân nhóm các Class tránh xung đột tên
 
 public class NhapMon { // Tên class trùng với tên file NhapMon.java
-
+    
     public static void main(String[] args) { // Hàm main: Nơi JVM bắt đầu chạy chương trình
-
+        
         // --- 1. Khai báo biến và các kiểu dữ liệu nguyên thủy (Primitive Types) ---
         int tuoi = 20;               // Kiểu số nguyên (4 bytes)
         double diem = 8.5;           // Kiểu số thực dấu phẩy động (8 bytes)
         char kyTu = 'A';             // Kiểu ký tự đơn (2 bytes, dùng nháy đơn)
         boolean laSinhVien = true;   // Kiểu logic (true/false)
-
+        
         // --- 2. Kiểu dữ liệu đối tượng / tham chiếu (Reference Type) ---
         String ten = "Nguyễn Văn A"; // Chuỗi ký tự (dùng nháy kép)
-
+        
         // --- 3. Sử dụng toán tử ---
         int namHienTai = 2026;
         int namSinh = namHienTai - tuoi; // Toán tử số học
-
+        
         // In kết quả ra màn hình Console
         System.out.println("Tên: " + ten);
         System.out.println("Năm sinh: " + namSinh);
@@ -201,13 +210,21 @@ public class NhapMon { // Tên class trùng với tên file NhapMon.java
 
 Điều khiển luồng chương trình bằng các điều kiện logic và lặp lại công việc khi điều kiện thỏa mãn.
 
+> **Hướng dẫn thực hành:**  
+> - **Thư mục cần tạo:** `com/giaoduc/core`  
+> - **Tên file:** `DieuKhienVongLap.java` (lưu tại `com/giaoduc/core/DieuKhienVongLap.java`)  
+> - **Lệnh chạy từ thư mục gốc dự án:**  
+>   ```bash
+>   java com/giaoduc/core/DieuKhienVongLap.java
+>   ```
+
 ```java
 package com.giaoduc.core;
 
 public class DieuKhienVongLap {
     public static void main(String[] args) {
         int diem = 78;
-
+        
         // --- 1. Khối lệnh if-else ---
         if (diem >= 90) {
             System.out.println("Xếp loại: Xuất sắc");
@@ -216,7 +233,7 @@ public class DieuKhienVongLap {
         } else {
             System.out.println("Xếp loại: Trung bình/Yếu");
         }
-
+        
         // --- 2. Cấu trúc switch-case (Kiểu switch expression mới của Java hiện đại) ---
         String thu = "Thứ Hai";
         String loaiNgay = switch (thu) {
@@ -224,14 +241,14 @@ public class DieuKhienVongLap {
             default -> "Ngày trong tuần";
         };
         System.out.println(thu + " là: " + loaiNgay);
-
+        
         // --- 3. Vòng lặp for ---
         System.out.print("Vòng lặp for: ");
         for (int i = 1; i <= 3; i++) {
             System.out.print(i + " ");
         }
         System.out.println();
-
+        
         // --- 4. Vòng lặp while & break/continue ---
         int dem = 0;
         System.out.print("Vòng lặp while: ");
@@ -256,6 +273,14 @@ public class DieuKhienVongLap {
 
 Quản lý danh sách phần tử cùng kiểu dữ liệu và xử lý văn bản một cách tối ưu.
 
+> **Hướng dẫn thực hành:**  
+> - **Thư mục cần tạo:** `com/giaoduc/core`  
+> - **Tên file:** `MangVaChuoi.java` (lưu tại `com/giaoduc/core/MangVaChuoi.java`)  
+> - **Lệnh chạy từ thư mục gốc dự án:**  
+>   ```bash
+>   java com/giaoduc/core/MangVaChuoi.java
+>   ```
+
 ```java
 package com.giaoduc.core;
 
@@ -264,13 +289,13 @@ public class MangVaChuoi {
         // --- 1. Mảng 1 chiều ---
         int[] danhSachSo = {2, 4, 6, 8};
         System.out.println("Phần tử thứ hai của mảng: " + danhSachSo[1]); // Index bắt đầu từ 0
-
+        
         // --- 2. String (Tính chất bất biến - Immutability) ---
         String s1 = "Hello";
         String s2 = s1.concat(" World"); // Tạo ra đối tượng String mới trên vùng nhớ Heap
         System.out.println("s1 gốc vẫn là: " + s1); // Vẫn giữ nguyên "Hello"
         System.out.println("s2 mới: " + s2);
-
+        
         // --- 3. StringBuilder (Mutable - Khuyên dùng khi sửa đổi chuỗi liên tục) ---
         StringBuilder sb = new StringBuilder("Java");
         sb.append(" Core");
@@ -288,6 +313,14 @@ public class MangVaChuoi {
 ### 4. Lập trình hướng đối tượng (OOP)
 
 OOP là xương sống của Java. Java hỗ trợ 4 đặc tính quan trọng: Đóng gói, Kế thừa, Đa hình và Trừu tượng.
+
+> **Hướng dẫn thực hành:**  
+> - **Thư mục cần tạo:** `com/giaoduc/core`  
+> - **Tên file:** `OOPDemo.java` (lưu tại `com/giaoduc/core/OOPDemo.java` - Lưu ý: Tên file phải trùng khớp với public class chứa hàm `main`).  
+> - **Lệnh chạy từ thư mục gốc dự án:**  
+>   ```bash
+>   java com/giaoduc/core/OOPDemo.java
+>   ```
 
 ```java
 package com.giaoduc.core;
@@ -334,7 +367,7 @@ public class OOPDemo {
         // Đa hình thực tế: Một biến lớp cha tham chiếu đến đối tượng lớp con
         DongVat cho = new ConCho("Kiki");
         DongVat meo = new ConMeo("Mimi");
-
+        
         cho.phatAmThanh(); // Kiki sủa: Gâu Gâu!
         meo.phatAmThanh(); // Mimi kêu: Meo Meo!
     }
@@ -352,6 +385,14 @@ public class OOPDemo {
 
 Exception dùng để kiểm soát các lỗi phát sinh trong thời gian chạy (Runtime) giúp chương trình không bị crash đột ngột.
 
+> **Hướng dẫn thực hành:**  
+> - **Thư mục cần tạo:** `com/giaoduc/core`  
+> - **Tên file:** `XuLyNgoaiLe.java` (lưu tại `com/giaoduc/core/XuLyNgoaiLe.java`)  
+> - **Lệnh chạy từ thư mục gốc dự án:**  
+>   ```bash
+>   java com/giaoduc/core/XuLyNgoaiLe.java
+>   ```
+
 ```java
 package com.giaoduc.core;
 
@@ -359,7 +400,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class XuLyNgoaiLe {
-
+    
     // Checked Exception: Phải khai báo 'throws' hoặc xử lý try-catch ngay lúc viết code
     public static void docFile() throws IOException {
         FileReader file = new FileReader("khong_ton_tai.txt");
@@ -399,6 +440,14 @@ public class XuLyNgoaiLe {
 
 Collections Framework cung cấp các cấu trúc dữ liệu dựng sẵn mạnh mẽ phục vụ lưu trữ và xử lý tập hợp đối tượng.
 
+> **Hướng dẫn thực hành:**  
+> - **Thư mục cần tạo:** `com/giaoduc/core`  
+> - **Tên file:** `CollectionDemo.java` (lưu tại `com/giaoduc/core/CollectionDemo.java`)  
+> - **Lệnh chạy từ thư mục gốc dự án:**  
+>   ```bash
+>   java com/giaoduc/core/CollectionDemo.java
+>   ```
+
 ```java
 package com.giaoduc.core;
 
@@ -406,7 +455,7 @@ import java.util.*;
 
 public class CollectionDemo {
     public static void main(String[] args) {
-
+        
         // --- 1. LIST: Có thứ tự, cho phép chứa phần tử trùng lặp ---
         List<String> list = new ArrayList<>();
         list.add("Java");
@@ -447,6 +496,14 @@ public class CollectionDemo {
 ### 1. Java 8+ New Features: Lambda, Stream & Optional
 
 Java 8 đánh dấu kỷ nguyên mới của Java với việc hỗ trợ lập trình hàm (Functional Programming).
+
+> **Hướng dẫn thực hành:**  
+> - **Thư mục cần tạo:** `com/giaoduc/advanced` (tạo thư mục lồng nhau tương ứng cấu trúc package nâng cao)  
+> - **Tên file:** `Java8PlusDemo.java` (lưu tại `com/giaoduc/advanced/Java8PlusDemo.java`)  
+> - **Lệnh chạy từ thư mục gốc dự án:**  
+>   ```bash
+>   java com/giaoduc/advanced/Java8PlusDemo.java
+>   ```
 
 ```java
 package com.giaoduc.advanced;
@@ -489,6 +546,14 @@ public class Java8PlusDemo {
 ### 2. Đa luồng (Multithreading & Concurrency)
 
 Đa luồng cho phép ứng dụng của bạn làm nhiều công việc cùng một lúc để tận dụng tối đa sức mạnh của CPU đa nhân.
+
+> **Hướng dẫn thực hành:**  
+> - **Thư mục cần tạo:** `com/giaoduc/advanced`  
+> - **Tên file:** `MultiThreadingDemo.java` (lưu tại `com/giaoduc/advanced/MultiThreadingDemo.java`)  
+> - **Lệnh chạy từ thư mục gốc dự án:**  
+>   ```bash
+>   java com/giaoduc/advanced/MultiThreadingDemo.java
+>   ```
 
 ```java
 package com.giaoduc.advanced;
@@ -537,6 +602,14 @@ public class MultiThreadingDemo {
 
 Lưu trữ dữ liệu chương trình vĩnh viễn xuống ổ đĩa cứng (Persistence) thông qua tập tin.
 
+> **Hướng dẫn thực hành:**  
+> - **Thư mục cần tạo:** `com/giaoduc/advanced`  
+> - **Tên file:** `FileIOSerializationDemo.java` (lưu tại `com/giaoduc/advanced/FileIOSerializationDemo.java`)  
+> - **Lệnh chạy từ thư mục gốc dự án:**  
+>   ```bash
+>   java com/giaoduc/advanced/FileIOSerializationDemo.java
+>   ```
+
 ```java
 package com.giaoduc.advanced;
 
@@ -566,7 +639,7 @@ public class FileIOSerializationDemo {
         // --- 1. Ghi/Đọc File dạng text thông dụng (Sử dụng Java NIO Files mới) ---
         Path path = Paths.get(txtFile);
         Files.writeString(path, "Học Java rất thú vị!\nĐây là dòng thứ 2."); // Ghi file cực nhanh từ Java 11
-
+        
         List<String> lines = Files.readAllLines(path); // Đọc toàn bộ dòng trong file
         System.out.println("Đọc file văn bản:");
         lines.forEach(System.out.println);
@@ -596,6 +669,15 @@ public class FileIOSerializationDemo {
 ### 4. Kết nối Cơ sở dữ liệu (JDBC Overview)
 
 Làm quen với việc giao tiếp dữ liệu giữa Java và các hệ quản trị cơ sở dữ liệu quan hệ (RDBMS).
+
+> **Hướng dẫn thực hành:**  
+> - **Thư mục cần tạo:** `com/giaoduc/advanced`  
+> - **Tên file:** `JDBCDemo.java` (lưu tại `com/giaoduc/advanced/JDBCDemo.java`)  
+> - **Lệnh chạy từ thư mục gốc dự án:**  
+>   *(Lưu ý: Bạn cần phải tải thư viện MySQL Connector JDBC dạng file `.jar` đặt ở cùng thư mục chạy và chỉ định classpath `-cp` tương ứng để tránh lỗi ClassNotFoundException)*  
+>   ```bash
+>   java -cp .:mysql-connector-j-x.x.x.jar com/giaoduc/advanced/JDBCDemo.java
+>   ```
 
 ```java
 package com.giaoduc.advanced;
