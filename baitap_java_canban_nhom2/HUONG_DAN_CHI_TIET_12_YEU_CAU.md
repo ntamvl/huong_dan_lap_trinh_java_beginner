@@ -4,20 +4,44 @@
 ---
 
 ## 📚 Mục Lục
-1. [Tổng Quan Cấu Trúc Dự Án](#1-tổng-quan-cấu-trúc-dự-án)
-2. [Yêu Cầu 1: Thiết Kế & Áp Dụng 4 Tính Chất Hướng Đối Tượng (OOP)](#2-yêu-cầu-1-thiết-kế--áp-dụng-4-tính-chất-hướng-đối-tượng-oop)
-3. [Yêu Cầu 2: Xây Dựng Constructor Cho Tất Cả Các Lớp](#3-yêu-cầu-2-xây-dựng-constructor-cho-tất-cả-các-lớp)
-4. [Yêu Cầu 3: Abstract Method, Abstract Class, Override/Overload Method & Static Field](#4-yêu-cầu-3-abstract-method-abstract-class-overrideoverload-method--static-field)
-5. [Yêu Cầu 4: Phân Tích Mối Quan Hệ Is-A và Has-A](#5-yêu-cầu-4-phân-tích-mối-quan-hệ-is-a-và-has-a)
-6. [Yêu Cầu 5: Sử Dụng và Giải Thích Từ Khóa super và this](#6-yêu-cầu-5-sử-dụng-và-giải-thích-từ-khóa-super-và-this)
-7. [Yêu Cầu 6: Toán Tử instanceof và Kỹ Thuật Downcasting](#7-yêu-cầu-6-toán-tử-instanceof-và-kỹ-thuật-downcasting)
-8. [Yêu Cầu 7: Xây Dựng Lớp EmployeeManager (Thêm, Sửa, Xóa)](#8-yêu-cầu-7-xây-dựng-lớp-employeemanager-thêm-sửa-xóa)
-9. [Yêu Cầu 8: Xây Dựng Các Hàm Kiểm Tra Tính Hợp Lệ Dữ Liệu (Validation)](#9-yêu-cầu-8-xây-dựng-các-hàm-kiểm-tra-tính-hợp-lệ-dữ-liệu-validation)
-10. [Yêu Cầu 9: Tìm Kiếm Tất Cả Nhân Viên Intern](#10-yêu-cầu-9-tìm-kiếm-tất-cả-nhân-viên-intern)
-11. [Yêu Cầu 10: Tìm Kiếm Tất Cả Nhân Viên Experience](#11-yêu-cầu-10-tìm-kiếm-tất-cả-nhân-viên-experience)
-12. [Yêu Cầu 11: Tìm Kiếm Tất Cả Nhân Viên Fresher](#12-yêu-cầu-11-tìm-kiếm-tất-cả-nhân-viên-fresher)
-13. [Yêu Cầu 12: Xây Dựng Các Custom Exceptions](#13-yêu-cầu-12-xây-dựng-các-custom-exceptions)
-14. [Hướng Dẫn Biên Dịch và Chạy Chương Trình](#14-hướng-dẫn-biên-dịch-và-chạy-chương-trình)
+- [HƯỚNG DẪN CHI TIẾT TỪNG BƯỚC THỰC HIỆN 12 YÊU CẦU DỰ ÁN JAVA OOP](#hướng-dẫn-chi-tiết-từng-bước-thực-hiện-12-yêu-cầu-dự-án-java-oop)
+  - [PHẦN MỀM QUẢN LÝ NHÂN VIÊN (GIAO DIỆN DÒNG LỆNH CLI)](#phần-mềm-quản-lý-nhân-viên-giao-diện-dòng-lệnh-cli)
+  - [📚 Mục Lục](#-mục-lục)
+  - [1. Tổng Quan Cấu Trúc Dự Án](#1-tổng-quan-cấu-trúc-dự-án)
+    - [Sơ đồ quan hệ giữa các lớp (Class Diagram):](#sơ-đồ-quan-hệ-giữa-các-lớp-class-diagram)
+  - [2. Yêu Cầu 1: Thiết Kế \& Áp Dụng 4 Tính Chất Hướng Đối Tượng (OOP)](#2-yêu-cầu-1-thiết-kế--áp-dụng-4-tính-chất-hướng-đối-tượng-oop)
+    - [2.1. Tính Đóng Gói (Encapsulation)](#21-tính-đóng-gói-encapsulation)
+    - [2.2. Tính Kế Thừa (Inheritance)](#22-tính-kế-thừa-inheritance)
+    - [2.3. Tính Đa Hình (Polymorphism)](#23-tính-đa-hình-polymorphism)
+    - [2.4. Tính Trừu Tượng (Abstraction)](#24-tính-trừu-tượng-abstraction)
+  - [3. Yêu Cầu 2: Xây Dựng Constructor Cho Tất Cả Các Lớp](#3-yêu-cầu-2-xây-dựng-constructor-cho-tất-cả-các-lớp)
+  - [4. Yêu Cầu 3: Abstract Method, Abstract Class, Override/Overload Method \& Static Field](#4-yêu-cầu-3-abstract-method-abstract-class-overrideoverload-method--static-field)
+    - [4.1. Abstract Class \& Abstract Method](#41-abstract-class--abstract-method)
+    - [4.2. Method Overriding (Ghi đè phương thức)](#42-method-overriding-ghi-đè-phương-thức)
+    - [4.3. Method Overloading (Nạp chồng phương thức)](#43-method-overloading-nạp-chồng-phương-thức)
+    - [4.4. Static Field (Thuộc tính tĩnh)](#44-static-field-thuộc-tính-tĩnh)
+  - [5. Yêu Cầu 4: Phân Tích Mối Quan Hệ Is-A và Has-A](#5-yêu-cầu-4-phân-tích-mối-quan-hệ-is-a-và-has-a)
+    - [5.1. Quan hệ Is-A (Là một - Kế thừa)](#51-quan-hệ-is-a-là-một---kế-thừa)
+    - [5.2. Quan hệ Has-A (Có một / Sở hữu)](#52-quan-hệ-has-a-có-một--sở-hữu)
+  - [6. Yêu Cầu 5: Sử Dụng và Giải Thích Từ Khóa super và this](#6-yêu-cầu-5-sử-dụng-và-giải-thích-từ-khóa-super-và-this)
+    - [6.1. Từ khóa `this`](#61-từ-khóa-this)
+    - [6.2. Từ khóa `super`](#62-từ-khóa-super)
+  - [7. Yêu Cầu 6: Toán Tử instanceof và Kỹ Thuật Downcasting](#7-yêu-cầu-6-toán-tử-instanceof-và-kỹ-thuật-downcasting)
+    - [7.1. Toán tử `instanceof` là gì?](#71-toán-tử-instanceof-là-gì)
+    - [7.2. Kỹ thuật Downcasting (Ép kiểu xuống)](#72-kỹ-thuật-downcasting-ép-kiểu-xuống)
+  - [8. Yêu Cầu 7: Xây Dựng Lớp EmployeeManager (Thêm, Sửa, Xóa)](#8-yêu-cầu-7-xây-dựng-lớp-employeemanager-thêm-sửa-xóa)
+    - [8.1. Thêm nhân viên (`addEmployee`)](#81-thêm-nhân-viên-addemployee)
+    - [8.2. Sửa thông tin nhân viên theo ID (`editEmployee`)](#82-sửa-thông-tin-nhân-viên-theo-id-editemployee)
+    - [8.3. Xóa nhân viên theo ID (`deleteEmployee`)](#83-xóa-nhân-viên-theo-id-deleteemployee)
+  - [9. Yêu Cầu 8: Xây Dựng Các Hàm Kiểm Tra Tính Hợp Lệ Dữ Liệu (Validation)](#9-yêu-cầu-8-xây-dựng-các-hàm-kiểm-tra-tính-hợp-lệ-dữ-liệu-validation)
+  - [10. Yêu Cầu 9: Tìm Kiếm Tất Cả Nhân Viên Intern](#10-yêu-cầu-9-tìm-kiếm-tất-cả-nhân-viên-intern)
+  - [11. Yêu Cầu 10: Tìm Kiếm Tất Cả Nhân Viên Experience](#11-yêu-cầu-10-tìm-kiếm-tất-cả-nhân-viên-experience)
+  - [12. Yêu Cầu 11: Tìm Kiếm Tất Cả Nhân Viên Fresher](#12-yêu-cầu-11-tìm-kiếm-tất-cả-nhân-viên-fresher)
+  - [13. Yêu Cầu 12: Xây Dựng Các Custom Exceptions](#13-yêu-cầu-12-xây-dựng-các-custom-exceptions)
+  - [14. Hướng Dẫn Biên Dịch và Chạy Chương Trình](#14-hướng-dẫn-biên-dịch-và-chạy-chương-trình)
+    - [14.1. Biên dịch từ Terminal/Command Prompt](#141-biên-dịch-từ-terminalcommand-prompt)
+    - [14.2. Chạy chương trình](#142-chạy-chương-trình)
+    - [14.3. Các chức năng trên Menu CLI:](#143-các-chức-năng-trên-menu-cli)
 
 ---
 
@@ -377,17 +401,17 @@ public List<Fresher> findFreshers() {
 
 Các lớp ngoại lệ tùy chỉnh trong package `exception` kế thừa từ `java.lang.Exception`:
 
-- **`BirthDayException`** ([BirthDayException.java](file:///Users/tamnguyen/Projects/learning/java/baitap_java_canban_nhom1/src/exception/BirthDayException.java))
-- **`EmailException`** ([EmailException.java](file:///Users/tamnguyen/Projects/learning/java/baitap_java_canban_nhom1/src/exception/EmailException.java))
-- **`PhoneException`** ([PhoneException.java](file:///Users/tamnguyen/Projects/learning/java/baitap_java_canban_nhom1/src/exception/PhoneException.java))
-- **`FullNameException`** ([FullNameException.java](file:///Users/tamnguyen/Projects/learning/java/baitap_java_canban_nhom1/src/exception/FullNameException.java))
+- **`BirthDayException`** ([BirthDayException.java](file:///Users/tamnguyen/Projects/learning/java/baitap_java_canban_nhom2/src/exception/BirthDayException.java))
+- **`EmailException`** ([EmailException.java](file:///Users/tamnguyen/Projects/learning/java/baitap_java_canban_nhom2/src/exception/EmailException.java))
+- **`PhoneException`** ([PhoneException.java](file:///Users/tamnguyen/Projects/learning/java/baitap_java_canban_nhom2/src/exception/PhoneException.java))
+- **`FullNameException`** ([FullNameException.java](file:///Users/tamnguyen/Projects/learning/java/baitap_java_canban_nhom2/src/exception/FullNameException.java))
 
 ---
 
 ## 14. Hướng Dẫn Biên Dịch và Chạy Chương Trình
 
 ### 14.1. Biên dịch từ Terminal/Command Prompt
-Mở terminal tại thư mục gốc của dự án (`baitap_java_canban_nhom1`):
+Mở terminal tại thư mục gốc của dự án (`baitap_java_canban_nhom2`):
 
 ```bash
 # Biên dịch toàn bộ mã nguồn sang thư mục bin

@@ -1,6 +1,6 @@
 # DỰ ÁN QUẢN LÝ NHÂN VIÊN CÔNG TY (JAVA OOP CLI)
 
-> **Bài tập nhóm Lập trình Java căn bản & Lập trình hướng đối tượng (OOP)**  
+> **Bài tập nhóm Lập trình Java căn bản & Lập trình hướng đối tượng (OOP)**
 > **Giao diện dòng lệnh (CLI - Command Line Interface)**
 
 ---
@@ -17,7 +17,7 @@ Phần mềm Quản lý Nhân viên là ứng dụng Java dòng lệnh được 
 ## 📁 2. Cấu Trúc Thư Mục Dự Án Đơn Giản
 
 ```
-baitap_java_canban_nhom1/
+baitap_java_canban_nhom2/
 ├── src/
 │   ├── entity/
 │   │   ├── Certificate.java        # Thực thể Bằng cấp
@@ -71,7 +71,7 @@ baitap_java_canban_nhom1/
 #### Trên macOS / Linux:
 ```bash
 # 1. Di chuyển vào thư mục dự án
-cd /path/to/baitap_java_canban_nhom1
+cd /path/to/baitap_java_canban_nhom2
 
 # 2. Biên dịch toàn bộ file java sang thư mục bin
 javac -d bin -encoding UTF-8 $(find src -name "*.java")
@@ -83,7 +83,7 @@ java -cp bin main.Main
 #### Trên Windows (CMD / PowerShell):
 ```cmd
 # 1. Di chuyển vào thư mục dự án
-cd \path\to\baitap_java_canban_nhom1
+cd \path\to\baitap_java_canban_nhom2
 
 # 2. Biên dịch
 javac -d bin -encoding UTF-8 -sourcepath src src/main/Main.java
@@ -93,9 +93,9 @@ java -cp bin main.Main
 ```
 
 ### Cách 2: Mở bằng IDE (IntelliJ IDEA / Eclipse / VS Code)
-1. Mở IDE và chọn **Open Project** -> Chọn thư mục `baitap_java_canban_nhom1`.
+1. Mở IDE và chọn **Open Project** -> Chọn thư mục `baitap_java_canban_nhom2`.
 2. Đánh dấu thư mục `src` là **Sources Root**.
-3. Mở file [Main.java](file:///Users/tamnguyen/Projects/learning/java/baitap_java_canban_nhom1/src/main/Main.java) và nhấn nút **Run** (hoặc `Shift + F10`).
+3. Mở file [Main.java](file:///Users/tamnguyen/Projects/learning/java/baitap_java_canban_nhom2/src/main/Main.java) và nhấn nút **Run** (hoặc `Shift + F10`).
 
 ---
 
@@ -134,4 +134,4 @@ Khi chương trình khởi chạy, menu tương tác sau sẽ xuất hiện:
 ---
 
 ## 📖 6. Tài Liệu Học Tập Dành Cho Người Mới Bắt Đầu
-Vui lòng đọc file [HUONG_DAN_CHI_TIET_12_YEU_CAU.md](file:///Users/tamnguyen/Projects/learning/java/baitap_java_canban_nhom1/HUONG_DAN_CHI_TIET_12_YEU_CAU.md) để xem giải thích cặn kẽ từng dòng code, nguyên lý OOP, cách bẫy ngoại lệ và bài học rút ra cho từng yêu cầu.
+Vui lòng đọc file [HUONG_DAN_CHI_TIET_12_YEU_CAU.md](file:///Users/tamnguyen/Projects/learning/java/baitap_java_canban_nhom2/HUONG_DAN_CHI_TIET_12_YEU_CAU.md) để xem giải thích cặn kẽ từng dòng code, nguyên lý OOP, cách bẫy ngoại lệ và bài học rút ra cho từng yêu cầu.
